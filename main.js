@@ -28,3 +28,20 @@ newButton.addEventListener("click", () => {
   body.appendChild(newH1);
   body.style.backgroundColor = "antiquewhite";
 });
+
+// 3. Async API calls
+// Make an API call using the Fetch API.
+// Display the first_name of the first three users in the DOM
+
+fetch("https://reqres.in/api/users")
+  .then((response) => response.json())
+  .then((result) => {
+    const userList = document.createElement("ul");
+    for (let i = 0; i < 3; i++) {
+      const userLi = document.createElement("li");
+      userLi.innerText = result.data[i].first_name;
+      userList.appendChild(userLi);
+    }
+    body.appendChild(userList);
+  })
+  .catch((error) => console.log(error));
