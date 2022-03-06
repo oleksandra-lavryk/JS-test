@@ -45,3 +45,19 @@ fetch("https://reqres.in/api/users")
     body.appendChild(userList);
   })
   .catch((error) => console.log(error));
+
+// 4. Class
+// Create a class called “Person”. The constructor should have 1 parameter called  firstname.
+// It should have 1 method called sayHello that should log: 'Hello my name is...
+
+class Person {
+  constructor(firstname) {
+    this.firstname = firstname;
+  }
+  sayHello() {
+    console.log(`Hello, my name is ${this.firstname}`);
+  }
+}
+
+const peter = new Person("Peter");
+peter.sayHello();
